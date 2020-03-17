@@ -1,0 +1,78 @@
+table{
+    table-layout: auto;
+    margin: 20px auto;
+    background-color: #CDC1B4;
+    border-color: #BBADA0;
+    border-style: solid;
+    border-width: 3px;
+    color: #776E65;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 4em;
+    text-align: center;
+    min-width: 70px;
+}
+table.pointer{
+    cursor: pointer;
+}
+div.pointer{
+    cursor: pointer;
+}
+table td {
+    width: 70px;  
+}
+
+.bot{
+    text-align: center;
+}
+#reset{
+  
+   border-radius: 8px;
+   background-color: #f44336;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-size: xx-large;
+   color: white;
+}
+#check{
+  
+    border-radius: 8px;
+    background-color: limegreen;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    color: white;
+ }
+ h2{
+    text-align: center;
+    clear:both;padding-top:15px; padding-left:15px;font-family:verdana;
+
+    font-size:1.25em;
+    -webkit-animation: color-change 1s infinite;
+    -moz-animation: color-change 1s infinite;
+    -o-animation: color-change 1s infinite;
+    -ms-animation: color-change 1s infinite;
+    animation: color-change 1s infinite;
+}
+@-webkit-keyframes color-change {
+    0% { color: limegreen; }
+    50% { color: blue; }
+    100% { color: limegreen; }
+}
+@-moz-keyframes color-change {
+    0% { color: limegreen; }
+    50% { color: blue; }
+    100% { color: limegreen; }
+}
+@-ms-keyframes color-change {
+    0% { color: limegreen; }
+    50% { color: blue; }
+    100% { color: limegreen; }
+}
+@-o-keyframes color-change {
+    0% { color: limegreen; }
+    50% { color: blue; }
+    100% { color: limegreen; }
+}
+@keyframes color-change {
+    0% { color: limegreen; }
+    50% { color: blue; }
+    100% { color: limegreen; }
+}
