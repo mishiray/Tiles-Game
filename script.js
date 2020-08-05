@@ -8,19 +8,22 @@ var j = 0;
 var arr = [];
 var k = 0;
 var rand = [];
+var l = 4;
+var num = (l*l);
 
     function shuffle(array) {
         array.sort(() => Math.random() - 0.5);
     }
 
-    for(var i = 1; i<17;i++ ){
+    for(var i = 1; i<num+1;i++ ){
         rand.push(i);
     }
+
     console.log(shuffle(rand));
 
-    for(var i=0; i<4; i++) {
+    for(var i=0; i < l; i++) {
         var data = [];
-        for(var j = 0; j < 4; j++){
+        for(var j = 0; j < l; j++){
             data.push(rand[k].toString());
             k++;
         }
@@ -33,15 +36,15 @@ table = document.getElementById("table");
    
 //fill the table cells with array
 function recreate(){
-    for(var i = 0; i < 4; i++)  
+    for(var i = 0; i < l; i++)  
     {
-      for(var j = 0; j < 4; j++)
+      for(var j = 0; j < l; j++)
       {
          table.rows[i].cells[j].id = arr[i][j];
 
         //console.log(table.rows[i].cells[j].id);
 
-          if(arr[i][j] == "16"){
+          if(arr[i][j] == num.toString()){
             table.rows[i].cells[j].innerHTML = " ";
           }else{
             table.rows[i].cells[j].innerHTML = arr[i][j];
@@ -49,9 +52,9 @@ function recreate(){
         }
     
     }
-    select("16");
+    select(num.toString());
 }
-
+    
     
     //mouse movements
     document.querySelectorAll('#table td').forEach(e => e.addEventListener("click", function() {
@@ -60,7 +63,7 @@ function recreate(){
         sel = e.id;
         var comp = getArrayIndex(arr,sel);
         select(sel);
-        var index = getArrayIndex(arr,"16");
+        var index = getArrayIndex(arr,num.toString());
         a = index[0];
         b = index[1];
     
@@ -74,7 +77,7 @@ function recreate(){
 
     //keyboard use
     document.onkeydown = function(e) { 
-        var start = getArrayIndex(arr,"16");
+        var start = getArrayIndex(arr,num.toString());
         check();
     try {
         switch (e.keyCode) { 
@@ -115,7 +118,7 @@ function recreate(){
             
     } catch (error) {
 
-        select("16");
+        select(num.toString());
     }
         
     }; 
@@ -123,18 +126,18 @@ function recreate(){
 //select tile/cell
 function select(sel){
     try {
-        for(var i=0; i<4; i++) {
-            for(var j = 0; j < 4; j++){
-                document.getElementById(arr[i][j]).style.backgroundColor = "#CDC1B4";  
-                document.getElementById(arr[i][j]).style.color = "#776E65"; 
+        for(var i=0; i<l; i++) {
+            for(var j = 0; j < l; j++){
+                document.getElementById(arr[i][j]).style.backgroundColor = "black";  
+                document.getElementById(arr[i][j]).style.color = "white"; 
             }
         }
-        document.getElementById(sel).style.backgroundColor = "#EEE4DA";  
-        document.getElementById(sel).style.color = "#776E65";
+        document.getElementById(sel).style.backgroundColor = null;  
+        document.getElementById(sel).style.color = "white";
     } catch (error) {
-        
-        document.getElementById("16").style.backgroundColor = "#EEE4DA";  
-        document.getElementById("16").style.color = "#776E65";
+        document.getElementById(num.toString()).style.backgroundColor = null;  
+        document.getElementById(num.toString()).style.border = null;  
+
     }
     
 }
@@ -142,16 +145,17 @@ function select(sel){
 //swap function
 function swap(b){
     try {
-    ar = getArrayIndex(arr,"16");
+    ar = getArrayIndex(arr,num.toString());
     cr = ar;
     br = getArrayIndex(arr,b);
+    console.log(br);
     arr[ar[0]][ar[1]]= arr[br[0]][br[1]];
-    arr[br[0]][br[1]]= "16";
+    arr[br[0]][br[1]]= num.toString();
 
     recreate();
     console.log(arr);
     } catch (error) {
-        select("16");
+        select(num.toString());
     }
     
 }
@@ -191,8 +195,8 @@ function check(){
             g++;
         }
     }
-    if(ch >= 15){
-        document.getElementById("progress").innerHTML = "CONGRATULAIONS YOU FINISHED";
+    if(ch >= num-1){
+        document.getElementById("progress").innerHTML = "CONGRATULAIONS";
     }else{
         document.getElementById("progress").innerHTML = " ";
     }
