@@ -1,11 +1,17 @@
+body{
+    background-repeat: no-repeat;
+    
+    background-position: center;
+    background-size: cover;
+}
 table{
     table-layout: auto;
+    padding: 10px;
     margin: 20px auto;
-    background-color: #CDC1B4;
-    border-color: #BBADA0;
+    border-color: black;
     border-style: solid;
-    border-width: 3px;
-    color: #776E65;
+    border-width: 8px;
+    border-radius: 10px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 4em;
     text-align: center;
@@ -19,6 +25,10 @@ div.pointer{
 }
 table td {
     width: 70px;  
+    padding: 2px;
+    margin: 5px;
+    border-radius: 10px;
+    border-color: transparent;
 }
 
 .bot{
@@ -27,7 +37,7 @@ table td {
 #reset{
   
    border-radius: 8px;
-   background-color: #f44336;
+   background-color: black;
    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
    font-size: xx-large;
    color: white;
@@ -35,7 +45,7 @@ table td {
 #check{
   
     border-radius: 8px;
-    background-color: limegreen;
+    background-color: black;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: xx-large;
     color: white;
@@ -43,7 +53,6 @@ table td {
  h2{
     text-align: center;
     clear:both;padding-top:15px; padding-left:15px;font-family:verdana;
-
     font-size:1.25em;
     -webkit-animation: color-change 1s infinite;
     -moz-animation: color-change 1s infinite;
